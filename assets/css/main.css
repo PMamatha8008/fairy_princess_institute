@@ -1,5 +1,5 @@
 /**
-* Template Name: Append
+* Template Name: Fairy Princess Institute LLP
 * Template URL: https://bootstrapmade.com/append-bootstrap-website-template/
 * Updated: Aug 07 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
@@ -858,6 +858,23 @@ section,
   transition: 0.3s;
 }
 
+.hero-logo {
+  max-width: 70px; /* adjust size as needed */
+  height: auto;     /* keeps aspect ratio */
+  /* display: block; */
+  margin-right: 10px;
+}
+
+/* Align logo + text side by side */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* extra spacing if needed */
+  color: white; /* keep text visible on dark bg */
+  font-weight: 600;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .hero h2 {
     font-size: 32px;
@@ -866,6 +883,15 @@ section,
   .hero p {
     font-size: 18px;
   }
+
+  .hero-logo {
+    max-width: 120px; /* smaller size for mobile */
+  }
+
+  .company-name {
+    font-size: 14px;
+  }
+  
 }
 
 /*--------------------------------------------------------------
@@ -996,6 +1022,21 @@ section,
 .objective .icon-boxes .col-md-6:nth-child(4) .icon-box {
   margin-top: -40px;
 }
+
+.photo-collage-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.photo-collage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* optional: makes it smooth */
+  object-fit: cover;
+}
+
 
 @media (max-width: 768px) {
 
@@ -1233,6 +1274,43 @@ section,
   width: 100%;
   z-index: 2;
 }
+
+
+/* ++++++++++++++++++++++++++++++++++++ */
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 350px; /* fixed height */
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+}
+
+.carousel-track img {
+  width: 300px;           /* fixed width for all images */
+  height: 350px;          /* same as container height */
+  object-fit: cover;      /* fills the box, crops extra part */
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio Section

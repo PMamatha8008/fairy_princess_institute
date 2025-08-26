@@ -1,5 +1,5 @@
 /**
-* Template Name: Append
+* Template Name: Fairy Princess Institute LLP
 * Template URL: https://bootstrapmade.com/append-bootstrap-website-template/
 * Updated: Aug 07 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
