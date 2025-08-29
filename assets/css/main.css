@@ -767,13 +767,17 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
+  display: flex;
   width: 100%;
   min-height: 100vh;
   position: relative;
-  padding: 80px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* padding: 80px 0; */
+  /* align-items: center;
+  justify-content: center; */
+    align-items: flex-end;   
+  justify-content: flex-end;
+   padding: 40px;
+   text-align: right;
 }
 
 .hero img {
@@ -866,14 +870,32 @@ section,
 }
 
 /* Align logo + text side by side */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* extra spacing if needed */
-  color: white; /* keep text visible on dark bg */
-  font-weight: 600;
-  text-decoration: none;
-}
+  #header .logo { 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Responsive logo height (scales with viewport) */
+  #header .logo img {
+    height: clamp(30px, 10vw, 46px);
+    width: auto;
+  }
+
+  /* Company name: responsive text size */
+  #header .logo .company-name {
+    font-size: clamp(11px, 1.4vw, 14px);
+    line-height: 1.2;
+    font-weight: 600;
+    /* Optional: set color if needed for contrast */
+    color: #fff;
+  }
+
+
+  /* If you want the second line smaller */
+  #header .logo .company-name br + * {
+    font-size: 0.9em;
+  }
 
 @media (max-width: 768px) {
   .hero h2 {
@@ -888,8 +910,11 @@ section,
     max-width: 120px; /* smaller size for mobile */
   }
 
-  .company-name {
-    font-size: 14px;
+.logo img {
+    max-height: 35px; /* smaller logo on mobile */
+  }
+  .logo .company-name {
+    font-size: 12px;  /* smaller text on mobile */
   }
   
 }
@@ -930,7 +955,7 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.objective .content h3 {
+.skilldevelopment .content h3 {
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -941,15 +966,15 @@ section,
   display: inline-block;
 }
 
-.objective .content h2 {
+.skilldevelopment .content h2 {
   font-weight: 700;
 }
 
-.objective .content p:last-child {
+.skilldevelopment .content p:last-child {
   margin-bottom: 0;
 }
 
-.objective .content .read-more {
+.skilldevelopment .content .read-more {
   background: var(--accent-color);
   color: var(--contrast-color);
   font-family: var(--heading-font);
@@ -964,23 +989,23 @@ section,
   justify-content: center;
 }
 
-.objective .content .read-more i {
+.skilldevelopment .content .read-more i {
   font-size: 18px;
   margin-left: 5px;
   line-height: 0;
   transition: 0.3s;
 }
 
-.objective .content .read-more:hover {
+.skilldevelopment .content .read-more:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
   padding-right: 19px;
 }
 
-.objective .content .read-more:hover i {
+.skilldevelopment .content .read-more:hover i {
   margin-left: 10px;
 }
 
-.objective .icon-box {
+.skilldevelopment .icon-box {
   background-color: var(--surface-color);
   padding: 50px 40px;
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
@@ -988,7 +1013,7 @@ section,
   transition: all 0.3s ease-out 0s;
 }
 
-.objective .icon-box i {
+.skilldevelopment .icon-box i {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -1003,23 +1028,23 @@ section,
   color: var(--accent-color);
 }
 
-.objective .icon-box h3 {
+.skilldevelopment .icon-box h3 {
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: 700;
 }
 
-.objective .icon-box p {
+.skilldevelopment .icon-box p {
   margin-bottom: 0;
 }
 
-.objective .icon-box:hover i {
+.skilldevelopment .icon-box:hover i {
   background-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
-.objective .icon-boxes .col-md-6:nth-child(2) .icon-box,
-.objective .icon-boxes .col-md-6:nth-child(4) .icon-box {
+.skilldevelopment .icon-boxes .col-md-6:nth-child(2) .icon-box,
+.skilldevelopment .icon-boxes .col-md-6:nth-child(4) .icon-box {
   margin-top: -40px;
 }
 
@@ -1040,8 +1065,8 @@ section,
 
 @media (max-width: 768px) {
 
-  .objective .icon-boxes .col-md-6:nth-child(2) .icon-box,
-  .objective .icon-boxes .col-md-6:nth-child(4) .icon-box {
+  .skilldevelopment .icon-boxes .col-md-6:nth-child(2) .icon-box,
+  .skilldevelopment .icon-boxes .col-md-6:nth-child(4) .icon-box {
     margin-top: 0;
   }
 }
@@ -1178,7 +1203,7 @@ section,
 /*--------------------------------------------------------------
 # runningprogram Section
 --------------------------------------------------------------*/
-.runningprogram .runningprogram-item {
+/* .runningprogram .runningprogram-item {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
@@ -1273,6 +1298,56 @@ section,
   margin-top: 20%;
   width: 100%;
   z-index: 2;
+} */
+
+.paidcourses h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.paidcourses h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.paidcourses p {
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.paidcourses .syllabus-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #b30000; /* red like in screenshot */
+  text-decoration: none;
+}
+
+.paidcourses .syllabus-link:hover {
+  text-decoration: underline;
+}
+
+.syllabus-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #b30000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.syllabus-link:hover {
+  text-decoration: underline;
+}
+
+.syllabus-img img {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
 }
 
 
