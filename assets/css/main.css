@@ -264,7 +264,7 @@ h6 {
 .index-page .header {
   --background-color: rgba(255, 255, 255, 0);
   --heading-color: #ffffff;
-  --nav-color: rgba(255, 255, 255, 0.5);
+  --nav-color: #ffffff;
   --nav-hover-color: #ffffff;
 }
 
@@ -284,6 +284,7 @@ h6 {
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
+    margin-left: auto;
   }
 
   .navmenu ul {
@@ -815,14 +816,12 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
+/* .hero {
   display: flex;
   width: 100%;
   min-height: 100vh;
   position: relative;
-  /* padding: 80px 0; */
-  /* align-items: center;
-  justify-content: center; */
+
     align-items: flex-end;   
   justify-content: flex-end;
    padding: 40px;
@@ -912,9 +911,9 @@ section,
 }
 
 .hero-logo {
-  max-width: 70px; /* adjust size as needed */
-  height: auto;     /* keeps aspect ratio */
-  /* display: block; */
+  max-width: 70px; 
+  height: auto;     
+
   margin-right: 10px;
 }
 
@@ -923,9 +922,9 @@ section,
 @media (max-width: 768px) {
    .hero {
     padding: 20px;
-    align-items: center; /* Center content on mobile */
+    align-items: center;
     justify-content: center;
-    text-align: center; /* Center text on mobile */
+    text-align: center; 
     min-height: 100vh;
   }
   
@@ -977,12 +976,226 @@ section,
   }
 
 .logo img {
-    max-height: 35px; /* smaller logo on mobile */
+    max-height: 35px; 
   }
   .logo .company-name {
-    font-size: 12px;  /* smaller text on mobile */
+    font-size: 12px;  
   }
   
+} */
+
+
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+  justify-content: flex-end;
+   text-align: right;
+}
+
+
+.certification-section {
+    width: 30%;
+    padding: 20px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.certification-section a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.certification-section a:hover,
+.certification-section a:focus {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #f0f8ff;
+}
+
+
+
+@media (min-height: 800px) {
+    .certification-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 20px;
+    }
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: #fafafa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.cert-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #f0f8ff;
+}
+
+.cert-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: white;
+    padding: 6px;
+    flex-shrink: 0;
+}
+
+.cert-logo-NSDC {
+    width: 90px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: white;
+    padding: 6px;
+    flex-shrink: 0;   
+}
+
+.cert-name {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #333;
+    font-weight: 600;
+}
+
+.hero-right {
+    width: 70%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.hero-right img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: color-mix(in srgb, var(--background-color), transparent 30%);
+    z-index: 2;
+}
+
+.hero-right .container {
+    position: relative;
+    z-index: 3;
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 30px;
+    text-align: end;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+
+@media (max-width: 1024px) {
+    .certification-section {
+        width: 40%;
+    }
+
+    .hero-right {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+        padding-top: 60px;
+    }
+
+    .certification-section {
+        width: 100%;
+        padding: 20px;
+        overflow: visible;
+    }
+
+    .hero-right {
+        width: 100%;
+        min-height: 60vh;
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .hero-right .container {
+        text-align: center; /* Center the text */
+        width: 95%; /* Slightly wider for mobile */
+        padding: 30px 20px; /* Adjust padding for mobile */
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem; /* Slightly smaller for mobile */
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem; /* Slightly smaller for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .certification-section {
+        padding: 15px;
+    }
+
+    .cert-item {
+        padding: 10px;
+    }
+
+    .cert-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .cert-name {
+        font-size: 11px;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -1631,6 +1844,7 @@ section,
 .syllabus-link {
   display: inline-block;
   margin-top: 10px;
+  margin-right: 15px;
   font-weight: 700;
   color: #b30000;
   text-decoration: none;
@@ -1648,19 +1862,71 @@ section,
   height: auto;
 }
 
+.paidcourses .enroll-btn {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 4px;
+  transition: 0.4s;
+  background: var(--accent-color, #007bff) !important; /* Added fallback color and !important */
+  color: var(--contrast-color, #ffffff) !important; /* Added fallback color and !important */
+  text-decoration: none;
+  border: 0;
+  margin-top: 10px;
+}
+
+.paidcourses .enroll-btn:hover {
+  background: color-mix(in srgb, var(--accent-color, #007bff), transparent 20%) !important;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .paidcourses h2 {
+font-size: 1.4rem;
+
+}
+
+
+  .paidcourses .enroll-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+    margin-left: 10px;
+  }
+}
+
+/* Mobile devices */
 @media (max-width: 575px) {
   .paidcourses h2 {
 font-size: 1.4rem;
 
 }
+
+
+  .paidcourses .enroll-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+    margin-left: 8px;
+  }
 }
 
-@media (max-width: 767px) {
+/* Extra small devices */
+@media (max-width: 400px) {
   .paidcourses h2 {
+font-size: 1.4rem;
 
-  font-size: 1.4rem;
 }
+
+
+  .paidcourses .enroll-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin-left: 6px;
+  }
 }
+
 
 
 
@@ -2305,6 +2571,51 @@ font-size: 1.4rem;
 
 .registration button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.form-message a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form-message a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.section-title-register {
+  text-align: center;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title-register h2 {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title-register h2:before,
+.section-title-register h2:after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--accent-color);
+  display: inline-block;
+}
+
+.section-title-register h2:before {
+  margin: 0 15px 10px 0;
+}
+
+.section-title-register h2:after {
+  margin: 0 0 10px 15px;
+}
+
+.section-title-register p {
+  margin-bottom: 0;
 }
 
 @media (max-width: 767px) {
